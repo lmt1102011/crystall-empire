@@ -20,3 +20,13 @@ users/{uid}/state/game
 ```
 
 The app includes the Crystal Garden Firebase web config in `src/firebaseConfig.ts`, with environment variables still supported through `.env.local`.
+
+## Deploy
+
+The repository includes a GitHub Pages workflow at `.github/workflows/deploy.yml`.
+
+On GitHub, set **Settings -> Pages -> Build and deployment -> Source** to **GitHub Actions**. After that, every push to `main` deploys the app to:
+
+```text
+https://lmt1102011.github.io/crystall-empire/
+```
