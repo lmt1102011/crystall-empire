@@ -1,0 +1,828 @@
+.empire-shell {
+  min-height: 100dvh;
+  overflow-x: hidden;
+  padding: 18px 18px calc(92px + env(safe-area-inset-bottom));
+  color: #f8fafc;
+  background:
+    radial-gradient(circle at 16% 10%, rgba(88, 28, 135, 0.42), transparent 28%),
+    radial-gradient(circle at 86% 12%, rgba(14, 116, 144, 0.34), transparent 26%),
+    linear-gradient(135deg, #060612 0%, #0a0818 54%, #111027 100%);
+}
+
+.game-topbar,
+.panel,
+.bottom-nav,
+.crystal-card-game,
+.display-case,
+.modal-backdrop > section {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(13, 18, 38, 0.72);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(18px);
+}
+
+.game-topbar {
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) auto minmax(320px, auto);
+  gap: 14px;
+  align-items: center;
+  width: min(1440px, 100%);
+  margin: 0 auto 18px;
+  border-radius: 20px;
+  padding: 12px;
+}
+
+.empire-brand,
+.resource-row,
+.level-pill,
+.section-heading,
+.hatch-actions,
+.bench-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-crystal {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border-radius: 15px;
+  color: #67e8f9;
+  background: linear-gradient(145deg, rgba(103, 232, 249, 0.22), rgba(167, 139, 250, 0.18));
+}
+
+.eyebrow {
+  margin: 0 0 5px;
+  color: #94a3b8;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: #fff;
+  line-height: 1.08;
+}
+
+h1 {
+  margin-bottom: 0;
+  font-size: 1.18rem;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: 1.34rem;
+}
+
+h3 {
+  margin-bottom: 0;
+  font-size: 0.98rem;
+}
+
+.body-text {
+  margin: 0;
+  color: #b6c3d4;
+  line-height: 1.55;
+}
+
+.resource-row {
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.resource-chip,
+.level-pill,
+.count-pill,
+.mutant-chip,
+.cloud-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 36px;
+  border-radius: 999px;
+  padding: 0 12px;
+  color: #e0f2fe;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.cloud-chip {
+  color: #cbd5e1;
+}
+
+.cloud-chip.synced {
+  color: #86efac;
+}
+
+.cloud-chip.saving,
+.cloud-chip.connecting {
+  color: #fde68a;
+}
+
+.cloud-chip.offline {
+  color: #fca5a5;
+}
+
+.resource-chip span {
+  color: #94a3b8;
+}
+
+.level-pill i,
+.growth-bar {
+  display: block;
+  width: 72px;
+  height: 7px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.24);
+}
+
+.level-pill b,
+.growth-bar i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #67e8f9, #a78bfa, #f0abfc);
+}
+
+.game-surface {
+  width: min(1440px, 100%);
+  margin: 0 auto;
+  min-width: 0;
+}
+
+.page-grid,
+.collection-layout,
+.map-layout,
+.alchemy-layout {
+  display: grid;
+  gap: 18px;
+}
+
+.page-grid {
+  grid-template-columns: minmax(260px, 0.38fr) minmax(0, 1fr);
+}
+
+.alchemy-layout {
+  grid-template-columns: minmax(260px, 0.78fr) minmax(320px, 1fr) minmax(280px, 0.78fr);
+}
+
+.map-layout,
+.collection-layout {
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.34fr);
+}
+
+.panel {
+  min-width: 0;
+  border-radius: 20px;
+  padding: 18px;
+}
+
+.wide-panel {
+  min-width: 0;
+}
+
+.section-heading {
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.primary-button,
+.ghost-button,
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  border: 0;
+  border-radius: 13px;
+  padding: 0 14px;
+  color: #f8fafc;
+  font-weight: 850;
+}
+
+button,
+select,
+input {
+  touch-action: manipulation;
+}
+
+.primary-button {
+  background: linear-gradient(135deg, #2563eb, #7c3aed 60%, #db2777);
+  box-shadow: 0 12px 30px rgba(124, 58, 237, 0.28);
+}
+
+.ghost-button,
+.icon-button {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.primary-button:disabled,
+.ghost-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.46;
+}
+
+.crystal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 14px;
+}
+
+.crystal-card-game {
+  position: relative;
+  display: grid;
+  min-height: 282px;
+  overflow: hidden;
+  border-radius: 18px;
+  padding: 14px;
+  color: #f8fafc;
+  text-align: left;
+}
+
+.crystal-card-game::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: radial-gradient(circle at 50% 24%, color-mix(in srgb, var(--rarity), transparent 68%), transparent 44%);
+}
+
+.crystal-art,
+.crystal-card-copy,
+.mutant-chip {
+  position: relative;
+}
+
+.crystal-art {
+  display: grid;
+  min-height: 170px;
+  place-items: center;
+}
+
+.crystal-svg {
+  width: min(100%, 220px);
+  height: 210px;
+}
+
+.crystal-svg.compact {
+  width: 118px;
+  height: 118px;
+}
+
+.crystal-card-copy span {
+  color: var(--rarity);
+  font-size: 0.76rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.crystal-card-copy p {
+  margin: 7px 0 0;
+  color: #94a3b8;
+  font-size: 0.84rem;
+}
+
+.mutant-chip {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.hatch-panel {
+  align-content: start;
+  display: grid;
+  gap: 18px;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgba(2, 6, 23, 0.72);
+}
+
+.crystal-detail,
+.result-modal {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(280px, 1fr);
+  gap: 20px;
+  width: min(820px, 100%);
+  border-radius: 24px;
+  padding: 22px;
+}
+
+.result-modal {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+}
+
+.close-button {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 40px;
+  padding: 0;
+}
+
+.detail-art {
+  display: grid;
+  min-height: 360px;
+  place-items: center;
+  border-radius: 20px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--rarity), transparent 82%), transparent 58%);
+}
+
+.detail-copy,
+.stat-grid,
+.effect-list,
+.recipe-list,
+.quest-list {
+  display: grid;
+  gap: 12px;
+}
+
+.stat-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.stat-grid span,
+.effect-list span,
+.monster-list span,
+.resource-preview span,
+.quest-row,
+.recipe-row {
+  border-radius: 14px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #dbeafe;
+}
+
+.stat-grid b {
+  float: right;
+}
+
+.alchemy-layout .panel {
+  min-height: 0;
+}
+
+.ingredient-shelf-game {
+  max-height: calc(100vh - 160px);
+  overflow: hidden;
+}
+
+.ingredient-grid-game {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  max-height: calc(100vh - 230px);
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.ingredient-token {
+  display: grid;
+  min-height: 112px;
+  justify-items: center;
+  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 10px;
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.ingredient-token.selected {
+  border-color: var(--ingredient);
+  box-shadow: inset 0 0 0 1px var(--ingredient);
+}
+
+.ingredient-token svg {
+  width: 30px;
+  height: 30px;
+  fill: var(--ingredient);
+}
+
+.ingredient-token span {
+  text-align: center;
+  font-size: 0.78rem;
+  line-height: 1.15;
+}
+
+.ingredient-token b {
+  color: #94a3b8;
+  font-size: 0.78rem;
+}
+
+.brewing-bench,
+.cauldron-wrap,
+.bench-actions,
+.thermo-slider {
+  display: grid;
+  gap: 14px;
+}
+
+.cauldron-wrap {
+  justify-items: center;
+}
+
+.cauldron-svg {
+  width: min(100%, 320px);
+  height: auto;
+  max-height: 260px;
+}
+
+.brew-slots {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+}
+
+.brew-slot {
+  min-height: 46px;
+  border-radius: 12px;
+  padding: 8px;
+  color: #dbeafe;
+  background: color-mix(in srgb, var(--ingredient), transparent 82%);
+  font-size: 0.76rem;
+  text-align: center;
+}
+
+.thermo-slider {
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  color: #cbd5e1;
+  font-weight: 800;
+}
+
+.thermo-slider input {
+  accent-color: #a78bfa;
+}
+
+.bench-actions {
+  grid-template-columns: 1fr 1fr;
+}
+
+.recipe-row {
+  display: grid;
+  gap: 6px;
+}
+
+.recipe-row h3,
+.recipe-row p {
+  margin: 0;
+}
+
+.recipe-row small {
+  color: #94a3b8;
+}
+
+.recipe-row.known {
+  border: 1px solid rgba(103, 232, 249, 0.28);
+}
+
+.map-panel {
+  min-height: min(620px, calc(100dvh - 156px));
+}
+
+.world-map-svg {
+  width: 100%;
+  height: min(62dvh, 560px);
+  min-height: 360px;
+}
+
+.world-map-svg path {
+  cursor: pointer;
+  stroke: rgba(255, 255, 255, 0.18);
+  stroke-width: 2;
+  transition: opacity 160ms ease, stroke 160ms ease;
+}
+
+.world-map-svg path.active {
+  stroke: #fff;
+  stroke-width: 4;
+}
+
+.world-map-svg path.locked {
+  cursor: not-allowed;
+  opacity: 0.34;
+}
+
+.region-panel {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--region), transparent 72%);
+}
+
+.monster-list,
+.resource-preview,
+.rarity-breakdown {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.collection-layout {
+  align-items: start;
+}
+
+.rarity-breakdown span {
+  display: inline-flex;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 132px;
+  border-radius: 12px;
+  padding: 9px 10px;
+  color: var(--rarity);
+  background: color-mix(in srgb, var(--rarity), transparent 90%);
+  font-weight: 850;
+}
+
+.display-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  gap: 14px;
+}
+
+.display-case {
+  display: grid;
+  gap: 12px;
+  border-radius: 18px;
+  padding: 14px;
+}
+
+.display-art {
+  display: grid;
+  min-height: 180px;
+  place-items: center;
+  border-radius: 16px;
+  background: radial-gradient(circle, rgba(103, 232, 249, 0.14), transparent 62%);
+  color: #64748b;
+  font-weight: 850;
+}
+
+.display-case select {
+  min-height: 42px;
+  border: 0;
+  border-radius: 12px;
+  padding: 0 10px;
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.quests-panel {
+  width: min(780px, 100%);
+  margin: 0 auto;
+}
+
+.quest-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.quest-row.done {
+  border: 1px solid rgba(52, 211, 153, 0.36);
+}
+
+.quest-row p {
+  margin: 4px 0 0;
+  color: #94a3b8;
+}
+
+.bottom-nav {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  left: 18px;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+  width: min(760px, calc(100% - 36px));
+  margin: 0 auto;
+  border-radius: 20px;
+  padding: 8px 8px calc(8px + env(safe-area-inset-bottom));
+}
+
+.bottom-nav button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 46px;
+  border: 0;
+  border-radius: 14px;
+  color: #94a3b8;
+  background: transparent;
+  font-weight: 850;
+}
+
+.bottom-nav button.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 1280px) {
+  .game-topbar {
+    grid-template-columns: minmax(220px, 1fr) minmax(180px, auto);
+  }
+
+  .resource-row {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+  }
+
+  .alchemy-layout {
+    grid-template-columns: minmax(260px, 0.82fr) minmax(320px, 1fr);
+  }
+
+  .recipe-book {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 1120px) {
+  .game-topbar,
+  .page-grid,
+  .alchemy-layout,
+  .map-layout,
+  .collection-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .resource-row {
+    justify-content: flex-start;
+  }
+
+  .ingredient-shelf-game,
+  .ingredient-grid-game {
+    max-height: none;
+  }
+
+  .map-panel {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .game-topbar {
+    grid-template-columns: 1fr;
+  }
+
+  .level-pill {
+    width: fit-content;
+  }
+
+  .resource-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .resource-chip,
+  .cloud-chip {
+    justify-content: center;
+  }
+
+  .crystal-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  .display-grid {
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .empire-shell {
+    padding: 10px 10px calc(88px + env(safe-area-inset-bottom));
+  }
+
+  .game-topbar,
+  .panel {
+    border-radius: 16px;
+  }
+
+  .crystal-detail {
+    grid-template-columns: 1fr;
+    max-height: calc(100vh - 32px);
+    overflow: auto;
+  }
+
+  .stat-grid,
+  .brew-slots {
+    grid-template-columns: 1fr;
+  }
+
+  .ingredient-grid-game {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .crystal-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .crystal-card-game {
+    min-height: 238px;
+    padding: 12px;
+  }
+
+  .crystal-art {
+    min-height: 138px;
+  }
+
+  .crystal-svg {
+    height: 160px;
+  }
+
+  .bottom-nav {
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+  }
+
+  .bottom-nav button {
+    flex-direction: column;
+    gap: 3px;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 1.08rem;
+  }
+
+  .panel {
+    padding: 14px;
+  }
+
+  .resource-row {
+    grid-template-columns: 1fr;
+  }
+
+  .ingredient-grid-game,
+  .crystal-grid,
+  .display-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ingredient-token {
+    min-height: 92px;
+  }
+
+  .thermo-slider {
+    grid-template-columns: 1fr;
+  }
+
+  .bench-actions,
+  .hatch-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .world-map-svg {
+    height: 360px;
+    min-height: 300px;
+  }
+
+  .bottom-nav {
+    gap: 4px;
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+
+  .bottom-nav button {
+    min-height: 52px;
+    padding: 0 2px;
+    font-size: 0.64rem;
+  }
+}
